@@ -166,7 +166,5 @@ By completing this deployment:
 - You validate your ability to manage **sensitive information securely** in a cloud environment.
 - This serves as a practical, resume-ready project to showcase cloud and cybersecurity skills.
 
-> ✅ A great addition to your portfolio for roles such as Cybersecurity Analyst, Cloud Security Engineer, or DevSecOps Specialist.
-
 ---
 
