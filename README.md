@@ -1,27 +1,27 @@
 # 🔐 Self-Hosted Password Manager Deployment using Passbolt on AWS
 
 ## Table of Contents
+
 - [Project Overview](#project-overview)
 - [Prerequisites](#prerequisites)
-- [Step 1: Set Up Ubuntu on VirtualBox](#step-1-set-up-ubuntu-on-virtualbox)
+- [Step 1: Set Up Ubuntu on VirtualBox](#️step-1-set-up-ubuntu-on-virtualbox)
 - [Step 2: Generate SSH Key Pair](#step-2-generate-ssh-key-pair)
-- [Step 3: Launch EC2 Instance on AWS](#step-3-launch-ec2-instance-on-aws)
-- [Step 4: Import SSH Key to AWS](#step-4-import-ssh-key-to-aws)
-- [Step 5: Configure Security Group](#step-5-configure-security-group)
-- [Step 6: Access and Configure Passbolt](#step-6-access-and-configure-passbolt)
-- [Step 7: Use Passbolt to Manage Passwords](#step-7-use-passbolt-to-manage-passwords)
+- [Step 3: Deploying Passbolt Instance on AWS](#step-3-deploying-passbolt-instance-on-aws)
+- [Step 4: Launching Passbolt on AWS](#step-4-launching-passbolt-on-aws)
+- [Step 5: Access Passbolt via Public IP](#step-5-access-passbolt-via-public-ip)
+- [Step 7: Complete Passbolt Setup](#️-step-7-complete-passbolt-setup)
 - [Skills Demonstrated](#skills-demonstrated)
 - [Conclusion](#conclusion)
 
 ---
 
-## 🧩 Project Overview
+## Project Overview
 
-This project showcases how to deploy a **secure, self-hosted password manager** using [Passbolt](https://www.passbolt.com/) on an AWS EC2 instance with **HTTPS encryption**, SSH key-based authentication, and public access configuration. It is a strong addition to your cybersecurity portfolio, demonstrating secure cloud deployment, encryption, and access control.
+This project showcases how to deploy a **secure, self-hosted password manager** using [Passbolt](https://www.passbolt.com/) on an AWS EC2 instance with **HTTPS encryption**, SSH key-based authentication, and public access configuration. It strongly adds to your cybersecurity portfolio, demonstrating secure cloud deployment, encryption, and access control.
 
 ---
 
-## ✅ Prerequisites
+## Prerequisites
 
 - AWS account → [Sign up here](https://aws.amazon.com/account/)
 - VirtualBox → [Download VirtualBox](https://www.virtualbox.org/)
@@ -31,7 +31,7 @@ This project showcases how to deploy a **secure, self-hosted password manager** 
 
 ---
 
-## 🖥️ Step 1: Set Up Ubuntu on VirtualBox
+## Step 1: Set Up Ubuntu on VirtualBox
 
 1. Download the Ubuntu ISO and create a new Virtual Machine in VirtualBox.
 2. Allocate at least 2GB RAM and 20GB storage.
@@ -39,7 +39,7 @@ This project showcases how to deploy a **secure, self-hosted password manager** 
 
 ---
 
-## 🔐 Step 2: Generate SSH Key Pair
+## Step 2: Generate SSH Key Pair
 
 On your Ubuntu VM, open a terminal and generate SSH keys:
 
@@ -50,14 +50,14 @@ cat ~/.ssh/id_rsa.pub
 
 ---
 
-## ☁️ Step 3: Deploying Passbolt Instance on AWS
+## Step 3: Deploying Passbolt Instance on AWS
 
 1. Go to passbolt.com > Install on-prem > select the Community edition.
-2. Choose AWS as your deployement platform.
+2. Choose AWS as your deployment platform.
 3. After selecting the AWS region and confirming pricing, a Passbolt AMI instance will be deployed automatically in your AWS account.
 ---
 
-## 🔑 Step 4: Launching passbolt on AWS
+## Step 4: Launching Passbolt on AWS
 
 ### During instance setup or afterwards:
 
@@ -74,7 +74,7 @@ cat ~/.ssh/id_rsa.pub
 > These rules allow remote access via SSH and ensure web access for Passbolt.
 
 **Screenshot:**  
-`![Security Group Setup](screenshots/step5_security_group.png)
+![Security Group Setup](images/newsecuritygroup.png)
 
 
 ### If you generated your own SSH key on Ubuntu:
@@ -84,7 +84,7 @@ cat ~/.ssh/id_rsa.pub
    cat ~/.ssh/id_rsa.pub
     ```
    
-2. Copy the entire contents of the public key.
+2. Copy all the contents of the public key.
 
 3. Go to EC2 > Key Pairs on the AWS console.
 
@@ -93,7 +93,7 @@ cat ~/.ssh/id_rsa.pub
 5. Paste the copied key and give it a name (e.g., ubuntu-key), then click Import.
 
 Screenshot:
-`![Import Key Pair](images/importkeypair)
+![Import Key Pair](images/importkeypair.png)
 
 
 After importing the key pair, refresh the key pair option and click LAUNCH.
@@ -104,7 +104,7 @@ When you click on the launch button, you will receive a notification.
 
 ---
 
-## 🌐 Step 5: Access Passbolt via Public IP
+## Step 5: Access Passbolt via Public IP
 
 1. Once your EC2 instance is running, navigate to the **EC2 Console**.
 2. Find your instance and locate its **Public IPv4 address**.
@@ -118,7 +118,7 @@ http://'your-public-ip'
 > If you do not see the page, ensure your security group allows inbound traffic on ports 80 and 443.
 
 **Screenshot:**  
-![Passbolt Public IP Access](images/publicIP)`
+![Passbolt Public IP Access](images/publicIP.png)`
 
 -----
 
@@ -135,17 +135,17 @@ http://'your-public-ip'
 5. You can now start creating, storing, and sharing complex passwords securely.
 
 **Screenshot:**  
-![Passbolt Setup Wizard](images/passbolt_setup)
-![Passbolt Setup Wizard](images/passboltsetup2)
-![Passbolt Setup Wizard](images/passboltsetup3)
+![Passbolt Setup Wizard](images/passbolt_setup.png)
+![Passbolt Setup Wizard](images/passboltsetup2.png)
+![Passbolt Setup Wizard](images/passboltsetup3.png)
 
 **Screenshot:**  
-![Passbolt Dashboard](images/passboltdashboard)
-![Passbolt](images/passbolt)
+![Passbolt Dashboard](images/passboltdashboard.png)
+![Passbolt](images/passbolt.png)
 
 ---
 
-## 🧠 Skills Demonstrated
+## Skills Demonstrated
 
 - ✅ Deployment of secure infrastructure using **AWS EC2**
 - ✅ Implementation of **self-hosted password management** with **Passbolt**
@@ -156,7 +156,7 @@ http://'your-public-ip'
 
 ----
 
-## 🏁 Conclusion
+## Conclusion
 
 This project demonstrates the ability to design and implement a secure, self-hosted password management solution using **Passbolt** on **AWS Cloud**.
 
